@@ -1,0 +1,16 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: docassistant-db
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app_pass
+      POSTGRES_DB: docassistant
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:

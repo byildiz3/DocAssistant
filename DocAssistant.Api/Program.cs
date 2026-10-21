@@ -1,4 +1,12 @@
+
+using Npgsql;
+using Pgvector;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("Db"));
+dataSourceBuilder.UseVector();
+builder.Services.AddSingleton(dataSourceBuilder.Build());
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -32,6 +40,29 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
+
+//app.MapGet("/db-test", async (NpgsqlDataSource db) =>
+//{
+//    var fake = Enumerable.Range(0, 1536).Select(i => (float)(i % 10) / 10).ToArray();
+
+//    await using var insert = db.CreateCommand("Insert into chunks (content,embedding) values($1,$2)");
+//    insert.Parameters.AddWithValue("Deneme metni");
+//    insert.Parameters.AddWithValue(new Vector(fake));
+//    await insert.ExecuteNonQueryAsync();
+
+//    await using var select = db.CreateCommand("select id,content from chunks order by embedding <=> $1 limit 50");
+//    select.Parameters.AddWithValue(new Vector(fake));
+
+//    var results = new List<object>();
+//    await using var reader = await select.ExecuteReaderAsync();
+//    while (await reader.ReadAsync())
+//        results.Add(new { Id = reader.GetInt32(0), Content = reader.GetString(1) });
+
+//    return results;
+
+//});
+
+
 
 app.Run();
 
