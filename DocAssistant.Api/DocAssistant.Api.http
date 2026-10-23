@@ -1,6 +1,6 @@
-@DocAssistant.Api_HostAddress = http://localhost:5216
+POST https://localhost:7199/documents
+Content-Type: application/json
 
-GET {{DocAssistant.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
+{
+  "text": "İade politikamız: Ürünler teslim tarihinden itibaren 14 gün içinde iade edilebilir. İade için ürünün kullanılmamış ve orijinal ambalajında olması gerekir. Kargo ücreti, ürün hatalıysa şirketimiz tarafından karşılanır. Müşteri hizmetlerimize hafta içi 09:00 ile 18:00 arasında 0850 000 00 00 numarasından ulaşabilirsiniz. Siparişler, ödeme onaylandıktan sonra 2 iş günü içinde kargoya verilir. Hediye kartlarının geçerlilik süresi satın alma tarihinden itibaren 1 yıldır."
+}

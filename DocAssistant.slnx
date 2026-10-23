@@ -4,4 +4,5 @@
     <File Path="init.sql" />
   </Folder>
   <Project Path="DocAssistant.Api/DocAssistant.Api.csproj" />
+  <Project Path="DocAssistant.Tests/DocAssistant.Tests.csproj" Id="534bcfb8-975f-442f-899f-6d71a945f3da" />
 </Solution>
