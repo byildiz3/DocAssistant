@@ -6,6 +6,8 @@ services:
       POSTGRES_USER: app
       POSTGRES_PASSWORD: app_pass
       POSTGRES_DB: docassistant
+       -
+       PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=false
     ports:
       - "5433:5432"
     volumes:
