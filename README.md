@@ -1,3 +1,4 @@
+[DocAssistant canlı cevap akışı](docs/ask-demo.png)
 # DocAssistant
 
 Yüklenen dokümanlar üzerinde soru-cevap yapan, **RAG (Retrieval-Augmented Generation)** tabanlı bir .NET 10 Web API projesi. Cevaplar **SSE** ile canlı akıtılır. Tamamen yerelde, ücretsiz çalışır (Ollama).
