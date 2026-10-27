@@ -1,4 +1,5 @@
-[DocAssistant canlı cevap akışı](docs/ask-demo.png)
+[DocAssistant canlı cevap akışı React.js Ekranı](docs/answer-demo.png)
+[DocAssistant canlı cevap akışı api](docs/ask-demo.png)
 # DocAssistant
 
 Yüklenen dokümanlar üzerinde soru-cevap yapan, **RAG (Retrieval-Augmented Generation)** tabanlı bir .NET 10 Web API projesi. Cevaplar **SSE** ile canlı akıtılır. Tamamen yerelde, ücretsiz çalışır (Ollama).
@@ -21,7 +22,7 @@ flowchart LR
 ```
 
 ## Teknolojiler
-.NET 10, ASP.NET Core Minimal API, Microsoft.Extensions.AI, OllamaSharp, Npgsql + Pgvector, PostgreSQL, Docker Compose, xUnit, GitHub Actions
+.NET 10, ASP.NET Core Minimal API, Microsoft.Extensions.AI, OllamaSharp, Npgsql + Pgvector, PostgreSQL, Docker Compose, xUnit, GitHub Actions, React.js + TypeScript (Vite)
 
 ## Yerelde çalıştırma
 1. [Ollama](https://ollama.com)'yı kur ve modelleri indir:
@@ -30,6 +31,9 @@ flowchart LR
 3. Bağlantı bilgisini kaydet (`src/DocAssistant.Api` klasöründe):
    `dotnet user-secrets set "ConnectionStrings:Db" "Host=127.0.0.1;Port=5433;Database=docassistant;Username=app;Password=app_pass"`
 4. Çalıştır: `dotnet run --project DocAssistant.Api`
+5. Arayüzü başlat:
+    `cd docassistant-web`, `npm-install`,`npm run dev` 
+    Sonra tarayıcıda `http://localhost:5173` adresini aç.
 
 > `docker-compose.yml`'deki şifre yalnızca yerel geliştirme içindir.
 
@@ -48,6 +52,6 @@ flowchart LR
 - Aynı doküman tekrar yüklenirse tekrarlı kayıt oluşur
 
 ## Yol haritası
-- [ ] React + TypeScript arayüzü
+- [X] React + TypeScript arayüzü
 - [ ] Redis önbelleği
 - [ ] RabbitMQ ile asenkron doküman işleme

@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+textarea,
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.answer {
+  margin-top: 1rem;
+  padding: 1rem;
+  min-height: 3rem;
+  border: 1px solid #8884;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
